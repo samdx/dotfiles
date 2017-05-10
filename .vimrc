@@ -8,6 +8,15 @@ set softtabstop=4
 set shiftwidth=4
 set expandtab
 
+set autoindent
+set backspace=indent,eol,start
+set complete-=i
+set smarttab
+
+if &listchars ==# 'eol:$'
+  set listchars=tab:>\ ,trail:-,extends:>,precedes:<,nbsp:+
+endif
+
 if has('gui_running')
     set guioptions=ia
     set guifont=Source\ Code\ Pro\ 12
@@ -16,12 +25,13 @@ endif
 "VIM-PLUG ==========
 call plug#begin('~/.vim/plugged')
 
-Plug 'keith/swift.vim'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'keith/swift.vim', { 'for': 'swift' }
 Plug 'junegunn/fzf'
-Plug 'kristijanhusak/vim-hybrid-material'
-Plug 'plasticboy/vim-markdown'
+"Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'mhartington/oceanic-next'
-Plug 'mhinz/vim-janah'
+"Plug 'mhinz/vim-janah'
 Plug 'mhinz/vim-startify'
 Plug 'lambdalisue/vim-gita'
 Plug 'itchyny/lightline.vim'
@@ -31,7 +41,7 @@ call plug#end()
 
 filetype plugin indent on
 
-"=============================================================================
+"=================================================================
 " LightLine
 set noshowmode	"lightline does it for you
 set laststatus=2
@@ -91,7 +101,7 @@ function! g:lightline.my.git_status() " {{{
   return winwidth(0) > 70 ? gita#statusline#preset('status') : ''
 endfunction " }}}
 
-"=============================================================================
+"=================================================================
 
 if has('termguicolors')
     set termguicolors
@@ -112,7 +122,7 @@ let g:vim_markdown_toml_frontmatter = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_autowrite = 1
 
-"=============================================================================
+"=================================================================
 augroup reload_vimrc
     autocmd!
     autocmd bufwritepost $MYVIMRC nested source $MYVIMRC
