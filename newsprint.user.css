@@ -2,7 +2,6 @@
 @include-when-export url(https://fonts.googleapis.com/css?family=Taviraj:400,400i,700,700i&display=swap&subset=vietnamese);
 
 html, body {
-	font-family: Lora, Taviraj, serif;
     font-family: Lora, Taviraj, serif;
 }
 
@@ -36,7 +35,7 @@ h4 {
 }
 
 blockquote {
-	color: #000;
+    color: #000;
 }
 
 /*Smaller margins*/
@@ -44,10 +43,6 @@ blockquote {
 ul,
 ol {
     margin: 0 0 0 0;
-}
-
-li p {
-	margin: 0px 0px;
 }
 
 blockquote,
