@@ -5,6 +5,15 @@ html, body {
 	font-family: Lora, Taviraj, serif;
     font-family: Lora, Taviraj, serif;
 }
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Berkshire Swash";
+    /*font-style: normal;*/
+    font-weight: normal;
+}
 }
 
 #write {
